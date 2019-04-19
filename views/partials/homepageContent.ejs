@@ -1,0 +1,76 @@
+<!-- Page Content -->
+<div class="container">
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">
+    Japanese
+    <small>for developers</small>
+  </h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+    <div class="col-md-8">
+      <img src="images/carbon.png" style="height: 400px; width: 600px;" />
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="my-3">Try typing "sugoi!"</h3>
+
+      <!--  CDN for now, have the file in utils for later. Issue with serving static JS to the client...-->
+      <div>
+        <script src="https://unpkg.com/wanakana"></script>
+        <input type="text" id="wanakana-input" />
+        <script>
+          var textInput = document.getElementById("wanakana-input");
+          wanakana.bind(textInput /* options */);
+        </script>
+      </div>
+      <br/>
+      <p id="phon">
+        This project uses <a href="https://wanakana.com">WanaKana.js</a>, an awesome way to type Hiragana and Katakana.
+      </p>
+      <h3 class="my-3">Project Details</h3>
+      <ul>
+        <li>Lorem Ipsum</li>
+        <li>Dolor Sit Amet</li>
+        <li>Consectetur</li>
+        <li>Adipiscing Elit</li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Projects Row -->
+  <h3 class="my-4">Start Learning</h3>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6 mb-4">
+        <h3 class="my-4"><small>Flash Cards</small></h3>
+      <a href="#">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="" />
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+        <h3 class="my-4"><small>Typing Exercises</small></h3>
+      <a href="#">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="" />
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+        <h3 class="my-4"><small>Quizzes</small></h3>
+      <a href="#">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="" />
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+        <h3 class="my-4"><small>Extra Resources</small></h3>
+      <a href="#">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="" />
+      </a>
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
