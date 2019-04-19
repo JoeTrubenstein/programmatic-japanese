@@ -15,7 +15,7 @@ Able to send GET requests to /api/{consonant}/ and get JSON response
 "u": "く",
 "e": "け",
 "o": "こ"
-}
+    }
 }
 ```
 
