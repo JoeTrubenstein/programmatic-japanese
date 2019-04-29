@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Highlight.js CDN -->
+    <% include ./partials/highlightCDN %>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Page CSS -->
+    <style>
+      .featurette-divider {
+        margin-top: 100px;
+        visibility: hidden;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <% include ./partials/bootstrapStyles %>
+    <title>Programmatic Japanese</title>
+  </head>
+  <body>
+    <% include ./partials/navbar %>
+
+    <!-- page content -->
+
+    <body>
+      <!-- Marketing messaging and featurettes
+    ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">
+              Japanese,
+              <span class="text-muted">as seen by web developers.</span>
+            </h2>
+            <p class="lead">
+              Is learning a programming language not unlike learning a foreign
+              language?
+            </p>
+            <p class="lead">
+              The Japanese <a href="https://en.wikipedia.org/wiki/Hiragana">Hiragana</a> alphabet is made up of consonant - vowel combinations,
+               traditionally represented by a 5 x 10 grid. For our purposes <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>
+            </p>
+          </div>
+          <div class="col-md-5">
+            <pre><code class="json">
+                {
+                  "k": {
+                    "a": "か",
+                    "i": "き",
+                    "u": "く",
+                    "e": "け",
+                    "o": "こ"
+                }
+              }
+              </code></pre>
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">
+              Oh yeah, it’s that good.
+              <span class="text-muted">See for yourself.</span>
+            </h2>
+            <p class="lead">
+              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
+              ligula porta felis euismod semper. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+              commodo.
+            </p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <pre><code class="js">
+    var data = null;
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+                
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4) {
+          console.log(this.responseText);
+      }
+    });
+                
+    xhr.open("GET", "https://programmatic-japanese.herokuapp.com/api/k");
+    xhr.send(data);
+                </code></pre>
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">
+              And lastly, this one. <span class="text-muted">Checkmate.</span>
+            </h2>
+            <p class="lead">
+              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
+              ligula porta felis euismod semper. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+              commodo.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <pre><code class="js">
+    let keys = Object.keys(hiragana)
+    let consonant = req.params.consonant
+    if (keys.includes(consonant)) {
+        res.json({
+            "consonant": consonant,
+            "phonemes" : hiragana[consonant]
+        });
+                </code></pre>
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <!-- /END THE FEATURETTES -->
+      </div>
+
+      <!-- FOOTER -->
+      <% include ./partials/footer %>
+    </body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <% include ./partials/bootstrapScripts %>
+  </body>
+</html>
+
+<!--  -->
