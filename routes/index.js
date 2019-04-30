@@ -7,8 +7,8 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET about page. */
-router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'Express' });
+router.get('/api', function(req, res, next) {
+  res.render('API', { title: 'Express' });
 });
 
 module.exports = router;
