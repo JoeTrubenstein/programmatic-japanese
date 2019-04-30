@@ -26,7 +26,8 @@ Able to send GET requests to /api/{consonant}/ and get JSON response
 
 - Add login / user functionality
 
-- Let user build own vocabulary by forming JSON objects
+- Let user build own vocabulary by forming JSON objects, push to mongodb
+
 
 
 Big thanks to [Wanakana.js](https://wanakana.com)
