@@ -11,11 +11,12 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/signup', function(req, res, next) {
-  res.send('signup page');
+// signup page to create new users
+router.get('/register', function(req, res, next) {
+  res.render('register', {errors: req.flash("loginMessage")});
 })
 
-router.post('/signup', signupValidation, function(req, res) {
+router.post('/register', signupValidation, function(req, res) {
 
   var errorValidate = req.validationErrors();
 
@@ -41,14 +42,26 @@ router.post('/signup', signupValidation, function(req, res) {
   }
 })
 
-router.get('/signin', function(req, res) {
-  res.send('sign-in page')
-})
+// view the sign in page
+router.get("/signin", function(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/");
+  }
+  res.render("signin", { errors: req.flash("loginMessage") });
+});
 
+// sign in via passport with username and password
 router.post('/signin', passport.authenticate('local-login', {
   successRedirect: '/',
-  failureRedirect: '/api/users/signin',
+  failureRedirect: '/users/signin',
   failureFlash: true
 }))
+
+//sign out
+router.get("/logout", function(req, res, next) {
+  req.logout();
+  res.redirect("/");
+});
+
 
 module.exports = router;
