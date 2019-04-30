@@ -6,12 +6,23 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.3",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
+    "debug": "^2.6.9",
+    "dotenv": "^7.0.0",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
-    "http-errors": "~1.6.2",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
+    "http-errors": "^1.6.3",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.5",
     "morgan": "~1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "wanakana": "^4.0.2"
   },
   "devDependencies": {
