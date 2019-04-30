@@ -3,12 +3,28 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
+var passport = require('passport');
+
+var expressValidator = require('express-validator');
+var session = require('express-session');
+var flash = require('connect-flash');
+
+
+var MongoStore = require('connect-mongo')(session);
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users/users');
 var apiRouter = require('./routes/API/kana');
 
 var app = express();
+
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true } )
+        .then( () => {
+          console.log('MONGODB CONNECTED')
+        })
+        .catch( err => console.log(`ERROR: ${err}`))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,6 +35,39 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET,
+  store: new MongoStore({ url: process.env.MONGODB_URI, autoReconnect: true}),
+  cookie: {
+    secure: false, 
+    maxAge: 365 * 24 * 60 * 60 * 1000
+  }
+}))
+
+app.use(expressValidator({
+  errorFormatter: function(param, message, value) {
+      var namespace = param.split('.');
+      var root = namespace.shift();
+      var formParam = root;
+      while (namespace.length) {
+          formParam += '[' + namespace.shift() + ']';
+      }
+      return {
+          param: formParam,
+          message: message,
+          value: value
+      }
+  }
+}))
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./lib/passport/passport')(passport);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
