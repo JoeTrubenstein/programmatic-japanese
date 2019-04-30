@@ -102,11 +102,30 @@ textBox.addEventListener("input", function(evt) {
       vocabObject[leftSide] = rightSide;
     }
   }
-  // saves the object
+  // saves the object but loops too much
+  /*
   vocabButton.addEventListener("click", function(evt) {
     let vocabWord = document.getElementById("newVocab").value;
     savedObject = {};
     savedObject[vocabWord] = vocabObject;
     console.log(savedObject);
   });
+  */
+});
+
+// saves the object correctly
+vocabButton.addEventListener("click", function(evt) {
+  let hiragana = textBox.value;
+  let savedObject = {};
+  for (let i = 0; i < hiragana.length; i++) {
+    savedObject[`${cipher[hiragana[i]]}`] = hiragana[i];
+  }
+
+  let vocabWord = document.getElementById("newVocab").value;
+
+  let savedVocab = {};
+
+  savedVocab[vocabWord] = savedObject;
+
+  console.log(savedVocab);
 });
