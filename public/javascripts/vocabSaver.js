@@ -1,6 +1,7 @@
 textBox = document.getElementById("vocab-input");
 phonBox = document.getElementById("new-obj");
 
+
 let cipher = {
   あ: "a",
   い: "i",
@@ -113,19 +114,3 @@ textBox.addEventListener("input", function(evt) {
   */
 });
 
-// saves the object correctly
-vocabButton.addEventListener("click", function(evt) {
-  let hiragana = textBox.value;
-  let savedObject = {};
-  for (let i = 0; i < hiragana.length; i++) {
-    savedObject[`${cipher[hiragana[i]]}`] = hiragana[i];
-  }
-
-  let vocabWord = document.getElementById("newVocab").value;
-  let savedVocab = {};
-
-  savedVocab[vocabWord] = savedObject;
-  phonBox.innerHTML = " ";
-  phonBox.innerHTML = `<code>${JSON.stringify(savedVocab)}</code>`
-  console.log(savedVocab);
-});

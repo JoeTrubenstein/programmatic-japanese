@@ -18,6 +18,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users/users');
 var apiRouter = require('./routes/API/kana');
 
+
 var app = express();
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true } )
@@ -81,6 +82,7 @@ app.use(expressValidator({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
