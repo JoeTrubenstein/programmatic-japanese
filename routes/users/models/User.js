@@ -8,9 +8,7 @@ let UserSchema = new mongoose.Schema({
         name: { type: String, default: '' },
         picture: { type: String, default: '' }
     },
-    vocab: [{
-        word: { type: mongoose.Schema.Types.ObjectId, ref: 'vocab' }
-    }],
+    vocab: [],
     timestamp: { type: String, default: () => moment().format('dddd, MMMM Do YYYY, h:mm:ss a')}
 })
 

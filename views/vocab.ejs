@@ -34,28 +34,30 @@
                 }
                       </code></pre>
         </div>
-        <div class="col-md-7">
-          <h3>Type a Japanese word in Hiragana</h3>
-          <div>
-            <script src="https://unpkg.com/wanakana"></script>
-            <input type="text" id="vocab-input" />
-            <script>
-              var textInput = document.getElementById("vocab-input");
-              wanakana.bind(textInput /* options */);
-            </script>
+        <form method="POST" action="/vocab/addword">
+          <div class="col-md-7">
+            <h3>Type a Japanese word in Hiragana</h3>
+            <div>
+              <script src="https://unpkg.com/wanakana"></script>
+              <input type="text" id="vocab-input" name="hiragana"/>
+              <script>
+                var textInput = document.getElementById("vocab-input");
+                wanakana.bind(textInput /* options */);
+              </script>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
+              veniam exercitationem expedita laborum at voluptate. Labore,
+              voluptates totam at aut nemo deserunt rem magni pariatur quos
+              perspiciatis atque eveniet unde.
+            </p>
+            <h3>Type the English Translation</h3>
+            <input required type="text" name="english" id="newVocab">
+            <br/>
+            <br/>
+            <button class="btn btn-primary" id="vocabButton">Save JSON</a>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-            veniam exercitationem expedita laborum at voluptate. Labore,
-            voluptates totam at aut nemo deserunt rem magni pariatur quos
-            perspiciatis atque eveniet unde.
-          </p>
-          <h3>Type the English Translation</h3>
-          <input required type="text" name="newVocab" id="newVocab">
-          <br/>
-          <br/>
-          <a class="btn btn-primary" id="vocabButton" href="#">Save JSON</a>
-        </div>
+        </form>
       </div>
       <!-- /.row -->
 
