@@ -16,4 +16,9 @@ router.get('/vocab', function(req, res, next) {
   res.render('vocab', { title: 'Express' });
 });
 
+/* GET less test page. */
+router.get('/less', function(req, res, next) {
+  res.render('less', { title: 'Express' });
+});
+
 module.exports = router;
