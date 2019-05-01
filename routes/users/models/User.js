@@ -9,7 +9,7 @@ let UserSchema = new mongoose.Schema({
         picture: { type: String, default: '' }
     },
     vocab: [{
-        word: { type: mongoose.Schema.Types.ObjectId, ref: 'word' }
+        word: { type: mongoose.Schema.Types.ObjectId, ref: 'vocab' }
     }],
     timestamp: { type: String, default: () => moment().format('dddd, MMMM Do YYYY, h:mm:ss a')}
 })

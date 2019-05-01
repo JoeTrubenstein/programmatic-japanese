@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/signup', function(req, res, next) {
-  res.send('signup page');
+  res.render('signup');
 })
 
 router.post('/signup', signupValidation, function(req, res) {
