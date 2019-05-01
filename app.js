@@ -48,6 +48,21 @@ app.use(session({
   }
 }))
 
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./lib/passport/passport')(passport);
+
+// locals
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  res.locals.error = req.flash("error");
+  next();
+});
+
 app.use(expressValidator({
   errorFormatter: function(param, message, value) {
       var namespace = param.split('.');
@@ -63,12 +78,6 @@ app.use(expressValidator({
       }
   }
 }))
-
-app.use(flash());
-app.use(passport.initialize());
-app.use(passport.session());
-
-require('./lib/passport/passport')(passport);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

@@ -122,10 +122,10 @@ vocabButton.addEventListener("click", function(evt) {
   }
 
   let vocabWord = document.getElementById("newVocab").value;
-
   let savedVocab = {};
 
   savedVocab[vocabWord] = savedObject;
-
+  phonBox.innerHTML = " ";
+  phonBox.innerHTML = `<code>${JSON.stringify(savedVocab)}</code>`
   console.log(savedVocab);
 });
