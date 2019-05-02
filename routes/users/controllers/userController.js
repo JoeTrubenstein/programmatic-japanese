@@ -46,5 +46,34 @@ module.exports = {
                     reject(errors);
                 })
         })
+    },
+
+
+    getUserInfo: function (params) {
+        return new Promise ((resolve, reject) => {
+            User.findById({ _id: params._id })
+                .then( (user) => {
+                    console.log(user)
+                    resolve(user)
+                })
+                .catch( (error) => {
+                    reject(error);
+                })
+        })
+    },
+
+    updateProfile: function (req) {
+        return new Promise( (resolve, reject) => {
+            User.findById({ _id: req.user._id })
+                .then( (user) => {
+                    user.email = req.body.email;
+                    user.profile.name = req.body.name;
+                    user.save()
+                    resolve(user);
+                })
+                .catch( (error) => {
+                    reject(error);
+                })
+        })
     }
 }

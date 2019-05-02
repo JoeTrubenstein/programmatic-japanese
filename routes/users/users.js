@@ -63,5 +63,26 @@ router.get("/logout", function(req, res, next) {
   res.redirect("/");
 });
 
+// view and edit profile
+router.get('/profile', function(req, res, next) {
+  userController.getUserInfo(req.user)
+                .then( (user) => {
+                  res.render('profile', { user: user })
+                })
+                .catch( (error) => {
+                  res.send(error);
+                })
+})
+
+router.post('/update', function(req, res, next) {
+  userController.updateProfile(req)
+                .then( (user) => {
+                  res.render('profile', { user: user })
+                })
+                .catch( (error) => {
+                  res.send(error);
+                })
+})
+
 
 module.exports = router;

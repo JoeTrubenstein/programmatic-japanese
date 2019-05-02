@@ -19,6 +19,15 @@ router.get('/vocab', function(req, res, next) {
   res.render('vocab', { title: 'Express' });
 });
 
+router.get('/vocab/words', function(req, res, next) {
+  User.findById({ _id: req.user._id })
+      .then( user => {
+        let hiraganaWord = '';
+        Object.keys(user.vocab[0].sugoi).forEach(e => hiraganaWord += user.vocab[0].sugoi[e]);
+        res.send(hiraganaWord);        
+      })
+})
+
 router.post('/vocab/addword', function(req, res) {
 
   let cipher = {
@@ -119,7 +128,7 @@ router.post('/vocab/addword', function(req, res) {
       .then( user => {
         user.vocab.push(savedVocab);
         user.save();
-        res.send('hello');
+        res.send(req.user.vocab);
       })
       .catch( error => {
         res.json(error);
