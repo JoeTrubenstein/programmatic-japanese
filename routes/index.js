@@ -21,6 +21,8 @@ router.get('/vocab', function(req, res, next) {
 
 router.post('/vocab/addword', function(req, res) {
 
+  // lets consider externalizing this at some point to keep the routes clean
+
   let cipher = {
     あ: "a",
     い: "i",
@@ -119,7 +121,9 @@ router.post('/vocab/addword', function(req, res) {
       .then( user => {
         user.vocab.push(savedVocab);
         user.save();
-        res.send('hello');
+        res.json({
+          savedVocab : user
+        });
       })
       .catch( error => {
         res.json(error);
