@@ -84,10 +84,14 @@ module.exports = {
     };
 
     let hiragana = req.body.hiragana;
+<<<<<<< HEAD
 
+=======
+    console.log("req body = " + " " + req.body.hiragana)
+>>>>>>> f94c71fd17d4f9166d62600d39b52f8a3d3b1c8e
     let savedObject = {};
     for (let i = 0; i < hiragana.length; i++) {
-      savedObject[`${cipher[hiragana[i]]}`] = hiragana[i];
+      savedObject[`${i}-${cipher[hiragana[i]]}`] = hiragana[i];
     }
 
     console.log(savedObject);
