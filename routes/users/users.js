@@ -74,6 +74,17 @@ router.get('/profile', function(req, res, next) {
                 })
 })
 
+// flashcards
+router.get('/flashcards', function(req, res, next) {
+  userController.getUserInfo(req.user)
+                .then( (user) => {
+                  res.render('flashcards', { user: user })
+                })
+                .catch( (error) => {
+                  res.send(error);
+                })
+})
+
 router.post('/update', function(req, res, next) {
   userController.updateProfile(req)
                 .then( (user) => {
