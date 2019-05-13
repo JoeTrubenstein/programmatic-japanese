@@ -19,14 +19,21 @@ Able to send GET requests to /api/{consonant}/ and get JSON response
 }
 ```
 
+- Connected Mongoose / mongodb
+
+- Added login / user functionality
+
+- Lets user build own vocabulary by forming JSON objects
+
 ## To do
 
+- handle a successful sign up (currently returns json response)
 
-- Connect Mongoose / mongodb
+- merge profile page
 
-- Add login / user functionality
+- have profile show word bank
 
-- Let user build own vocabulary by forming JSON objects
+- flash card page
 
 
 Big thanks to [Wanakana.js](https://wanakana.com)
