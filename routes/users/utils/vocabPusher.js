@@ -84,9 +84,10 @@ module.exports = {
     };
 
     let hiragana = req.body.hiragana;
+    console.log("req body = " + " " + req.body.hiragana)
     let savedObject = {};
     for (let i = 0; i < hiragana.length; i++) {
-      savedObject[`${cipher[hiragana[i]]}`] = hiragana[i];
+      savedObject[`${i}-${cipher[hiragana[i]]}`] = hiragana[i];
     }
 
     let vocabWord = req.body.english;
