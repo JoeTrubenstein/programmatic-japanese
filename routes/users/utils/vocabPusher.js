@@ -103,9 +103,7 @@ module.exports = {
       .then(user => {
         user.vocab.push(savedVocab);
         user.save();
-        res.json({
-            user
-        });
+        res.render("vocab", {success: "saved word"})
       })
       .catch(error => {
         res.json(error);

@@ -28,9 +28,15 @@ router.post('/register', signupValidation, function(req, res) {
 
     userController.signup(req.body)
                   .then( user => {
-                    res.json({
-                      confirmation: 'success',
-                      response: user
+                    req.logIn(user, function(err) {
+                      if (err) {
+                        res.status(400).json({
+                          confirmation: false,
+                          message: err
+                        })
+                      } else {
+                        res.redirect("/")
+                      }
                     })
                   })
                   .catch( error => {

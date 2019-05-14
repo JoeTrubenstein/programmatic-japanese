@@ -12,13 +12,14 @@ router.get('/', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Express' });
 });
+
 router.get('/flash-card', function(req, res, next) {
   res.render('flash-card', { title: 'Sushi Script'});
 });
 
-/* GET api page. */
+/* GET vocab page. */
 router.get('/vocab', function(req, res, next) {
-  res.render('vocab', { title: 'Express' });
+  res.render('vocab', { title: 'Express', success: [] });
 });
 
 /* add vocab word to a user */
