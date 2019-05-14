@@ -5,12 +5,15 @@ var vocabPusher =  require('../routes/users/utils/vocabPusher')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Sushi Script', subtitle: 'Learn Sushi Language with Javascript' });
 });
 
 /* GET api page. */
 router.get('/api', function(req, res, next) {
   res.render('API', { title: 'Express' });
+});
+router.get('/flash-card', function(req, res, next) {
+  res.render('flash-card', { title: 'Sushi Script'});
 });
 
 /* GET api page. */
