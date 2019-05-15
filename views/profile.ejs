@@ -48,7 +48,9 @@
                       class="d-block"
                       style="font-size: 1.5rem; font-weight: bold"
                     >
-                      <a href="javascript:void(0);" style="color: #EE4422"><%= user.profile.name %></a>
+                      <a href="javascript:void(0);" style="color: #EE4422"
+                        ><%= user.profile.name %></a
+                      >
                     </h2>
                     <h6 class="d-block"><%= user.vocab.length %> Words</h6>
                     <h6 class="d-block">100 Points</h6>
@@ -125,12 +127,25 @@
                         <div class="col-sm-3 col-md-2 col-5">
                           <label style="font-weight:bold;">Vocab</label>
                         </div>
-                        <div class="col-md-8 col-6">
-                          <% for(let i = 0; i < user.vocab.length; i++) { %>
-                          <div class="col-md-8 col-6">
-                            <%= JSON.stringify(user.vocab[i]) %>
-                          </div>
-                          <% } %>
+                        <div class="col-md-8 col-6" style="padding: 0px">
+                          <ul style="list-style-type: none; padding-left: 15px">
+                            <% for (let i = 0; i < user.vocab.length; i++) { let
+                            values = Object.values(user.vocab[i]); let
+                            finalValues = Object.values(values[0]); let english
+                            = Object.keys(values[0]); let romaji = ''; for (let
+                            k = 0; k < english.length; k++) { let syllable =
+                            english[k].slice(2, 10); romaji += syllable; } let
+                            hiragana = ''; for (let j = 0; j <
+                            finalValues.length; j++) { hiragana +=
+                            finalValues[j]; } %>
+
+                            <li style="padding: 3px">
+                              <%= Object.keys(user.vocab[i]) %> - <%= hiragana
+                              %>
+                            </li>
+
+                            <% } %>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -160,7 +175,11 @@
                             name="name"
                           />
                         </div>
-                        <button type="submit" class="btn btn-primary" style="background-color: #EE4422; border: #EE4422">
+                        <button
+                          type="submit"
+                          class="btn btn-primary"
+                          style="background-color: #EE4422; border: #EE4422"
+                        >
                           Submit
                         </button>
                       </form>
@@ -175,6 +194,6 @@
     </div>
 
     <!-- /.container -->
-    <% include ./partials/bootstrapScripts %> <% include ./partials/footer %>
+    <% include ./partials/bootstrapScripts %> 
   </body>
 </html>
