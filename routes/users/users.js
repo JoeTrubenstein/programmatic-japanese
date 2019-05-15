@@ -53,7 +53,7 @@ router.get("/signin", function(req, res, next) {
   if (req.isAuthenticated()) {
     return res.redirect("/");
   }
-  res.render("signin", { errors: req.flash("loginMessage") });
+  res.render("signin", { title: 'Sign In',errors: req.flash("loginMessage") });
 });
 
 // sign in via passport with username and password
@@ -81,7 +81,7 @@ router.get('/profile', function(req, res, next) {
 })
 
 // flashcards
-router.get('/flashcards', function(req, res, next) {
+router.get('/flash-card', function(req, res, next) {
   userController.getUserInfo(req.user)
                 .then( (user) => {
                   res.render('flash-card', { user: user, title: 'Sushi Script' })

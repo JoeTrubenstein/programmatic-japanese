@@ -8,7 +8,9 @@
 <section>
 
 <div class="container">
+    <% if(user) { %>
   <div class="row d-flex justify-content-around">
+    
     <div class="card col-md-6" style="max-width: 20rem;">
     <a href="/vocab">
     <div class="card-body">
@@ -45,7 +47,13 @@
     <p class="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div></a>
     </div>
-
 </div>
+<% } else { %>
+  <div 
+  style="margin-bottom: 200px;"
+  class="container">
+    <center><h3><a href="users/register">Sign Up to Get Started!</a></h3></center>
+      </div>
+      <% } %>
 </div> <!-- container -->
 </section>
