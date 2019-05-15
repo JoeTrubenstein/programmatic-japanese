@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Highlight.js CDN -->
+    <% include ./partials/highlightCDN %>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Page CSS -->
+    <style>
+      .featurette-divider {
+        margin-top: 100px;
+        visibility: hidden;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+
+    <!-- Bootstrap CSS -->
+    <% include ./partials/bootstrapStyles %>
+    <title>Programmatic Japanese</title>
+  </head>
+  <body>
+    <% include ./partials/navbar %>
+
+    <!-- page content -->
+
+    <body>
+      <!-- Marketing messaging and featurettes
+    ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">
+              A Uniquely Programmatic <br/>
+              <span class="text-muted">approach to language learning</span>
+            </h2>
+<br/>
+            <p class="lead">
+              The Japanese <a href="https://en.wikipedia.org/wiki/Hiragana" style="color: #EE4422">Hiragana</a> alphabet represents phonetic sounds made by consonant / vowel pairs,
+               traditionally represented by a 5 x 10 grid. Thereby easily represented as <a href="https://en.wikipedia.org/wiki/JSON" style="color: #EE4422">JSON</a> objects.
+              <br/> <br/>
+               Saving Japanese words into a JSON data structures will allow you to re-use them in our learning activities.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <pre><code class="json">
+                {
+                  "k": {
+                    "a": "か",
+                    "i": "き",
+                    "u": "く",
+                    "e": "け",
+                    "o": "こ"
+                }
+              }
+              </code></pre>
+          </div>
+        </div>
+
+
+      <!-- FOOTER -->
+      <% include ./partials/footer %>
+    </body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <% include ./partials/bootstrapScripts %>
+  </body>
+</html>
+
+<!--  -->

@@ -48,7 +48,7 @@
                       class="d-block"
                       style="font-size: 1.5rem; font-weight: bold"
                     >
-                      <a href="javascript:void(0);"><%= user.profile.name %></a>
+                      <a href="javascript:void(0);" style="color: #EE4422"><%= user.profile.name %></a>
                     </h2>
                     <h6 class="d-block"><%= user.vocab.length %> Words</h6>
                     <h6 class="d-block">100 Points</h6>
@@ -76,6 +76,7 @@
                         role="tab"
                         aria-controls="basicInfo"
                         aria-selected="true"
+                        style="color: #EE4422"
                         >Basic Info</a
                       >
                     </li>
@@ -88,6 +89,7 @@
                         role="tab"
                         aria-controls="connectedServices"
                         aria-selected="false"
+                        style="color: #EE4422"
                         >Edit Profile</a
                       >
                     </li>
@@ -158,7 +160,7 @@
                             name="name"
                           />
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary" style="background-color: #EE4422; border: #EE4422">
                           Submit
                         </button>
                       </form>
