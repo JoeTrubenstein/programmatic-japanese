@@ -8,8 +8,10 @@
     <% include ./partials/highlightCDN %>
     <!-- Bootstrap CSS -->
     <% include ./partials/bootstrapStyles %>
-    <title>Sign In</title>
+    <% include ./partials/head %>
+    <!-- <title>Sign In</title> -->
     <style>
+      
       /* sign in FORM */
       #logreg-forms {
         width: 412px;
@@ -166,7 +168,7 @@
             name="password"
           />
 
-          <button class="btn btn-success btn-block" type="submit">
+          <button style= "background-color:#EE4422;" class="btn btn-success btn-block" type="submit">
             <i class="fas fa-sign-in-alt"></i> Sign in
           </button>
           <a href="#" id="forgot_pswd">Forgot password?</a>
@@ -174,6 +176,7 @@
           <!-- <p>Don't have an account!</p>  -->
           <a href = "/users/register">
           <button
+          style= "background-color:#EE4422;"
             class="btn btn-primary btn-block"
             type="button"
             id="btn-signup"
