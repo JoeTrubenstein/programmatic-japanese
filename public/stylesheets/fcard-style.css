@@ -74,6 +74,8 @@
     display: table-cell; 
     vertical-align: middle; 
     text-align: center; 
+    font-size: 4em;
+    padding: 1em 0;
   }
   .fcard__description svg {
     width: 1.5em;

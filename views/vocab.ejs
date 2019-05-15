@@ -16,87 +16,74 @@
     <!-- Page Content -->
     <div style="margin-top: 100px;" class="container">
       <!-- Page Heading -->
-      <h1 class="my-4">
-        Vocabulary
-        <small>Create JSON objects of words to learn</small>
-      </h1>
 
       <!-- Project One -->
-      <div class="row">
-        <div class="col-md-5">
-          <pre><code 
-                    id ="new-obj"
-                    style ="min-height: 300px; margin: auto; align-items: center;"
-                    class="json">
-                {
-                    "my" : "new word",
-                    "Hiragana" : "Romaji"
-                }
-                      </code></pre>
+      <div style="margin: auto; display: block !important;" class="row">
+        <% if (success.length > 0) { %>
+        <div class="alert alert-primary alert-dismissible show" role="alert">
+          <%= success %>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <form method="POST" action="/vocab/addword">
-          <div class="col-md-7">
-            <h3>Type a Japanese word in Hiragana</h3>
-            <div>
-              <script src="https://unpkg.com/wanakana"></script>
-              <input type="text" id="vocab-input" name="hiragana"/>
-              <script>
-                var textInput = document.getElementById("vocab-input");
-                wanakana.bind(textInput /* options */);
-              </script>
+        <% } %>
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h1 class="my-4">
+                JSON Vocabulary
+              </h1>
+              <pre><code 
+            id ="new-obj"
+            style ="min-height: 300px;"
+            class="json">
+            {
+              "I, me" : {
+                わ : "wa"
+                た : "ta"
+                し : "shi"
+              }
+            }
+          </code></pre>
+              <form method="POST" action="/vocab/addword">
+                <div class="col-md">
+                  <h3>Type a word in Hiragana</h3>
+                  <div>
+                    <script src="https://unpkg.com/wanakana"></script>
+                    <input type="text" id="vocab-input" name="hiragana" />
+                    <script>
+                      var textInput = document.getElementById("vocab-input");
+                      wanakana.bind(textInput /* options */);
+                    </script>
+                  </div>
+                  <p>
+                    The Hiragna Alphabet represents phonetic sounds made by
+                    consonant / vowel pairs. <br /><br />
+                    Saving a word into a JSON data structure will allow you to
+                    re-use it in our games.
+                  </p>
+                  <h3>Type the English Translation</h3>
+                  <p></p>
+                  <input required type="text" name="english" id="newVocab" />
+                  <br />
+                  <br />
+                  <button class="btn btn-primary" id="vocabButton">
+                    Save JSON
+                  </button>
+                </div>
+              </form>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium
-              veniam exercitationem expedita laborum at voluptate. Labore,
-              voluptates totam at aut nemo deserunt rem magni pariatur quos
-              perspiciatis atque eveniet unde.
-            </p>
-            <h3>Type the English Translation</h3>
-            <input required type="text" name="english" id="newVocab">
-            <br/>
-            <br/>
-            <button class="btn btn-primary" id="vocabButton">Save JSON</a>
           </div>
-        </form>
-      </div>
-      <!-- /.row -->
-
-      <hr />
-
-      <!-- Project Two -->
-      <div class="row">
-        <div class="col-md-5">
-            
         </div>
+        <!-- /.row -->
+
+        <hr />
       </div>
-      <!-- /.row -->
-
-      <hr />
-
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
     </div>
     <!-- /.container -->
     <% include ./partials/bootstrapScripts %> <% include ./partials/footer %>

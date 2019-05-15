@@ -28,9 +28,15 @@ router.post('/register', signupValidation, function(req, res) {
 
     userController.signup(req.body)
                   .then( user => {
-                    res.json({
-                      confirmation: 'success',
-                      response: user
+                    req.logIn(user, function(err) {
+                      if (err) {
+                        res.status(400).json({
+                          confirmation: false,
+                          message: err
+                        })
+                      } else {
+                        res.redirect("/")
+                      }
                     })
                   })
                   .catch( error => {
@@ -78,7 +84,7 @@ router.get('/profile', function(req, res, next) {
 router.get('/flashcards', function(req, res, next) {
   userController.getUserInfo(req.user)
                 .then( (user) => {
-                  res.render('flashcards', { user: user })
+                  res.render('flash-card', { user: user, title: 'Sushi Script' })
                 })
                 .catch( (error) => {
                   res.send(error);
