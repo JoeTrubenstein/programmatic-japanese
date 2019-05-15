@@ -24,7 +24,7 @@
   .fcard {
     /* width: 25%; */
     position: relative;
-    height: 25em;
+    height: 20em;
     perspective: 150em;
   }
   .fcard__side {
@@ -32,26 +32,31 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 25em;
+    height: 20em;
     backface-visibility: hidden;
     transition: all .6s ease;
     box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.2);
   }
   .fcard__side--front {
     background-color: #FFF;
+    display: table;
   }
   .fcard__side--back {
     color: #FFF;
     transform: rotateY(180deg);
+    display: table;
   }
   .fcard__side--back-1 {
     background-image: linear-gradient(to right bottom, #FF3C00, #E94F37);
+    display: table;
   }
   .fcard__side--back-2 {
     background-image: linear-gradient(to right bottom, #FF3C00, #E94F37);
+    display: table;
   }
   .fcard__side--back-3 {
     background-image: linear-gradient(to right bottom, #FF3C00, #E94F37);
+    display: table;
   }
   .fcard:hover .fcard__side--front {
     transform: rotateY(-180deg);
@@ -61,6 +66,14 @@
   }
   .fcard__description {
     text-transform: uppercase;
+    font-size: 5vw;
+    padding-right: 10px;
+    padding-left: 10px;
+    word-wrap: break-word;
+    hyphens: auto;
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center; 
     font-size: 4em;
     padding: 1em 0;
   }
@@ -69,4 +82,7 @@
     height: 1.5em;
     fill: #FFF;
   }
-  
+  .card:hover{
+    background-color: #FFE0DB;
+
+  }

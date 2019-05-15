@@ -1,6 +1,31 @@
   <section class="content">
   <div class="container">
   <div class="row fcards">
+    <div class="col-sm-4 fcard">
+      <div class="fcard__side fcard__side--front fcard__side--front-1">
+        <div class="fcard__description">hello</div>
+      </div>
+      <div class="fcard__side fcard__side--back fcard__side--back-1 ">
+        <div class="fcard__description">こんにちは</div>
+      </div>
+    </div>
+    <div class="col-sm-4 fcard">
+      <div class="fcard__side fcard__side--front fcard__side--front-2Ω">
+        <div class="fcard__description">great</div>
+      </div>
+      <div class="fcard__side fcard__side--back fcard__side--back-2">
+        <div class="fcard__description">すごい</div>
+      </div>
+    </div>
+    <div class="col-sm-4 fcard">
+      <div class="fcard__side fcard__side--front fcard__side--front-3">
+        <div class="fcard__description">interesting</div>
+      </div>
+      <div class="fcard__side fcard__side--back fcard__side--back-3">
+        <div class="fcard__description">おもしろい</div>
+      </div>
+    </div>
+
     <% for (let i = 0; i < user.vocab.length; i++) { 
             let values = Object.values(user.vocab[i]);
             let finalValues = Object.values(values[0]);
