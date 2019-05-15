@@ -1,10 +1,12 @@
-<section class="content">
+
+  <section class="content height-fix">
+
   <div class="container">
 
   <div class="row fcards">
 
-    <div class="row fcards">
-      <!-- <div class="col-sm-4 fcard">
+    <%# <div class="col-sm-4 fcard">
+
       <div class="fcard__side fcard__side--front fcard__side--front-1">
         <div class="fcard__description">hello</div>
       </div>
@@ -27,7 +29,8 @@
       <div class="fcard__side fcard__side--back fcard__side--back-3">
         <div class="fcard__description">おもしろい</div>
       </div>
-    </div> -->
+
+    </div> %>
 
 
       <% for (let i = 0; i < user.vocab.length; i++) { let values =
@@ -41,12 +44,13 @@
           <div class="fcard__description">
             <%= Object.keys(user.vocab[i]) %>
           </div>
-        </div>
-        <div class="fcard__side fcard__side--back fcard__side--back-1">
-          <div class="fcard__description">
-            <%= hiragana %>
-            <br />
+
+          <div class="fcard__side fcard__side--back fcard__side--back-1">
+            <div class="fcard__description"><%= hiragana %><br>
+
             <h3><%= romaji %></h3>
+            </div>
+            
           </div>
         </div>
       </div>
