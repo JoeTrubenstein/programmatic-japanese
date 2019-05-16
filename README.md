@@ -25,15 +25,16 @@ Able to send GET requests to /api/{consonant}/ and get JSON response
 
 - Lets user build own vocabulary by forming JSON objects
 
+- handles a successful sign up (currently returns json response)
+
+- merged profile page
+
+- made profile show word bank
+
+- completed flash card page
+
 ## To do
 
-- handle a successful sign up (currently returns json response)
-
-- merge profile page
-
-- have profile show word bank
-
-- flash card page
 
 
 Big thanks to [Wanakana.js](https://wanakana.com)
