@@ -1,7 +1,7 @@
 <section class="title-section">
 <div class="container">
   <center><img src="../../images/sushiScript.png" alt="sushiScript-logo image"><h1><%= title %></h1></center><br>
-  <center><h5 class="sub"> <%= subtitle %></h5></center>
+  <center><h5 class="sub"> Sign up to create your own flashcards</h5></center>
 </div>
 </section>
 
@@ -49,11 +49,42 @@
     </div>
 </div>
 <% } else { %>
-  <div 
-  style="margin-bottom: 200px;"
-  class="container">
-    <center><h3><a href="users/register">Sign Up to Get Started!</a></h3></center>
+  <section style="margin-bottom: 50px;">
+      <div class="container">
+      <div class="row fcards">
+     
+     
+        <% for (let i = 0; i < vocab.length; i++) {
+                let values = Object.values(vocab[i]);
+                let finalValues = Object.values(values[0]);
+                let english = Object.keys(values[0]);
+                let romaji = '';
+                for (let k = 0; k < english.length; k++) {
+                  let syllable = english[k].slice(2, 10);
+                  romaji += syllable;
+                }
+                let hiragana = '';
+                for (let j = 0; j < finalValues.length; j++) {
+                  hiragana += finalValues[j];
+                }
+            %>
+            
+            <div class="col-sm-4 fcard">
+              <div class="fcard__side fcard__side--front fcard__side--front-1">
+                <div class="fcard__description"><%= Object.keys(vocab[i]) %></div>
+              </div>
+              <div class="fcard__side fcard__side--back fcard__side--back-1">
+                <div class="fcard__description rotate"><%= hiragana %><br>
+                <h3><%= romaji %></h3>
+                </div>
+     
+              </div>
+            </div>
+     
+            <% } %>
+        </div>
       </div>
+     </section>
       <% } %>
 </div> <!-- container -->
 </section>
