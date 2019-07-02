@@ -1,6 +1,6 @@
 # Programmatic Japanese
 
-A language learning resource aimed at developers who are interested in Japanese.
+A Node app that lets you build your own Hiragana flashcards using JSON objects.
 
 ## Currently working
 
@@ -35,6 +35,8 @@ Able to send GET requests to /api/{consonant}/ and get JSON response
 
 ## To do
 
+- Not all mobile devices are currently able to display the flash cards properly.
 
+## Acknowledgements
 
 Big thanks to [Wanakana.js](https://wanakana.com)
